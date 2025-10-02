@@ -20,4 +20,7 @@ func main() {
 	fmt.Println(a1)
 	fmt.Println(a2)
 
+	//main package helper (go run .)
+	fmt.Println(Sum(10, 20))
+
 }
