@@ -10,6 +10,7 @@ func main() {
 	arr[0] = 100
 	arr[1] = 200
 	arr[2] = 300
+	fmt.Printf("Type of array is %T \n", arr)
 	fmt.Println("Numbers are arr : ", arr)
 	fmt.Println("Lenght of No : ", len(arr))
 
