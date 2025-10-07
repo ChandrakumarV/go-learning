@@ -36,4 +36,10 @@ func main() {
 	// Is Sorted
 	fmt.Println("Is number sorted? ", sort.IntsAreSorted(numbers))
 
+	// Remove the value from index
+
+	index := 2
+	numbers = append(numbers[:index], numbers[index+1:]...)
+	fmt.Println(numbers)
+
 }
