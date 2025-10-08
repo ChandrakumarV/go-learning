@@ -29,7 +29,7 @@ func main() {
 	// Is Sorted
 	fmt.Println("Is number sorted? ", sort.IntsAreSorted(numbers))
 
-	// Is sorting
+	// Sorting
 	sort.Ints(numbers)
 	fmt.Println(numbers)
 
