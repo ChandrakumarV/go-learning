@@ -4,26 +4,30 @@ import "fmt"
 
 // find the sum two no = 19 and return the indices
 
+func twoSum(nums []int, target int) []int {
+
+	m := make(map[int]int)
+
+	for i, num := range nums {
+		neededNo := target - num
+
+		if mapIndex, isContain := m[neededNo]; isContain {
+			return []int{mapIndex, i}
+		}
+
+		m[num] = i
+
+	}
+
+	return []int{}
+
+}
+
 func main() {
 
 	tar := 19
 	arr := []int{3, 6, 4, 7, 8, 2, 11}
 
-	m := make(map[int]int)
-
-	for i := 0; i < len(arr); i++ {
-
-		neededNo := tar - arr[i]
-		mapIndex, isContain := m[neededNo]
-
-		if isContain {
-			fmt.Println(mapIndex, i)
-			return
-		}
-
-		m[arr[i]] = i
-
-	}
-
-	fmt.Println([]int{})
+	result := twoSum(arr, tar)
+	fmt.Println(result)
 }
