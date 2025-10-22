@@ -9,6 +9,8 @@ var myUrl = "https://www.youtube.com/watch?name=chandru&age=21&course=science&co
 
 func main() {
 
+	// Destructure URL -------------
+
 	result, _ := url.Parse(myUrl)
 
 	fmt.Println(result.Scheme)   // https
@@ -17,7 +19,7 @@ func main() {
 	fmt.Println(result.Port())   // ""
 	fmt.Println(result.RawQuery) // name=chandru&age=21&course=science
 
-	// -----------
+	// Map search querys -----------
 
 	mapQuery := result.Query()
 
@@ -25,7 +27,7 @@ func main() {
 		fmt.Println(key, " : ", value)
 	}
 
-	// Create URL
+	// Build URL -------------------
 
 	partsOfURL := &url.URL{
 		Scheme:   "https",
