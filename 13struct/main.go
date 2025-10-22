@@ -10,6 +10,10 @@ type Person struct {
 	isActive bool
 }
 
+func (u Person) Greet() {
+	fmt.Println("Hello,", u.name)
+}
+
 func main() {
 
 	// Method 1 -----------
@@ -18,6 +22,7 @@ func main() {
 	s.age = 30
 	s.isActive = true
 
+	s.Greet()
 	fmt.Println(s)
 
 	// Method 2 ---------------
