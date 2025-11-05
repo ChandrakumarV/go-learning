@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func PrintFuncs() {
+func main() {
 
 	const a, b = "test", 123
 
@@ -17,6 +17,7 @@ func PrintFuncs() {
 	// Variable declaration and assignment
 	var c bool
 	c = true
+	fmt.Println("Boolean: ", c)
 
 	// Short hand declaration and assignment
 	// only inside a function
@@ -37,6 +38,7 @@ func PrintFuncs() {
 
 	// Constants
 	const pi = 3.14
+	// p=21 XX
 	fmt.Println(pi)
 
 	// Multiple constant declaration
@@ -47,13 +49,14 @@ func PrintFuncs() {
 	)
 	fmt.Println(e, g, sol)
 
-	// iota - enumerated constants
+	// iota - enumerated constants - special predeclared identifier in Go that simplifies creating sequentially increasing constants.
 	const (
 		cat   = iota // 0
 		dog          // 1
 		lion         // 2
 		tiger        // 3
 	)
+
 	fmt.Println(cat, dog, lion, tiger) // 0 1 2 3
 
 	// iota with expressions

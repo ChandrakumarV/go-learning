@@ -17,24 +17,22 @@ func main() {
 
 }
 
-func formReq() {
+func getReq() {
+	path := basePath
 
-	path := basePath + "postform"
-
-	data := url.Values{}
-
-	data.Add("name", "chandru")
-	data.Add("age", "12")
-	data.Add("isStudent", "true")
-
-	res, err := http.PostForm(path, data)
+	res, err := http.Get(path)
 	checkErr(err)
 
 	defer res.Body.Close()
 
-	body, _ := io.ReadAll(res.Body)
-	fmt.Println(string(body))
+	body, _ := io.ReadAll(res.Body) // body -> byte
 
+	// fmt.Println(string(body))
+
+	var responseString strings.Builder // struct assign like "new class()"
+	responseString.Write(body)         // byte -> string.builder
+
+	fmt.Println(responseString.String()) // string.builder -> string
 }
 
 func postReq() {
@@ -58,21 +56,24 @@ func postReq() {
 
 }
 
-func getReq() {
-	path := basePath
+func formReq() {
 
-	res, err := http.Get(path)
+	path := basePath + "postform"
+
+	data := url.Values{}
+
+	data.Add("name", "chandru")
+	data.Add("age", "12")
+	data.Add("isStudent", "true")
+
+	res, err := http.PostForm(path, data)
 	checkErr(err)
+
 	defer res.Body.Close()
 
-	body, _ := io.ReadAll(res.Body) // body -> byte
+	body, _ := io.ReadAll(res.Body)
+	fmt.Println(string(body))
 
-	// fmt.Println(string(body))
-
-	var responseString strings.Builder // struct assign like "new class()"
-	responseString.Write(body)         // byte -> string.builder
-
-	fmt.Println(responseString.String()) // string.builder -> string
 }
 
 func checkErr(err error) {

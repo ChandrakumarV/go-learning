@@ -35,9 +35,7 @@ func main() {
 		fmt.Println("JSON is valid")
 		json.Unmarshal(jsonDataFormWeb, &course)
 		fmt.Printf("%#v\n", course)
-		// fmt.Println(course)
 	} else {
-
 		fmt.Println("JSON is not valid")
 	}
 

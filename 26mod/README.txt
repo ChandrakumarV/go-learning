@@ -6,8 +6,7 @@
 
                         ----------------- GO Modules ------------------
 
-> go mod init github.com/<username>/<module_name>  
-            // initialize a new module
+> go mod init github.com/<username>/<module_name>    // initialize a new module
 
 > go mod verify                                 // verify dependencies against their checksums
 > go mod tidy                                   // add missing and remove unused modules (use carefully)

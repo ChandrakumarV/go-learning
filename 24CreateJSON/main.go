@@ -16,11 +16,11 @@ type Course struct {
 func main() {
 	courses := []Course{
 		{
-			"JS",
-			199,
-			"Online",
-			"zawezxas",
-			[]string{"JS", "Developer", "Frontend"},
+			Name:     "JS",
+			Price:    199,
+			Platform: "Online",
+			Password: "zawezxas",
+			Tags:     []string{"JS", "Developer", "Frontend"},
 		},
 		{
 			"GO",
@@ -31,8 +31,9 @@ func main() {
 		},
 	}
 
-	// finalJson, err := json.Marshal(courses)
-	finalJson, err := json.MarshalIndent(courses, "", "\t")
+	// finalJson, err := json.Marshal(courses) // without aligment
+	finalJson, err := json.MarshalIndent(courses, "", "\t") // with aligment
+
 	checkErr(err)
 
 	fmt.Println("JSON ------------------")
